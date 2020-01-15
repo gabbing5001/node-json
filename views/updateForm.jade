@@ -1,0 +1,21 @@
+doctype html 
+html 
+    head
+        meta(charset='utf-8')
+    body
+        h1 Update User
+        div 
+            a(href='/') Home
+        article
+            each user in userDetail
+                form(action='/update' method='post')
+                    p
+                        input(type="hidden" name='id' value=user.id)
+                    p
+                        input(type='text' name='name' value=user.name)
+                    p
+                        input(type='text' name='age' value=user.age)
+                    p
+                        input(type='text' name='email' value=user.email)
+                    p
+                        input(type='submit')

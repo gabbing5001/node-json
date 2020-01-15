@@ -1,0 +1,23 @@
+doctype html 
+html 
+    head
+        meta(charset='utf-8')
+    body
+        h1 
+            a(href='/list') userDetail
+        div 
+            each user in userDetail
+                form(action='/delete/'+user.id method='post')
+                  p
+                    span Name: 
+                    span= user.name
+                  p
+                    span Email: 
+                    span= user.email
+                  p
+                    span Age: 
+                    span= user.age
+                  p
+                    input(type='submit' value="삭제")   
+                div
+                    a(href='/update/'+user.id) 수정
